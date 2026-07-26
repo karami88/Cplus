@@ -24,10 +24,5 @@ int main()
          cout<<last<<endl;
       }
 
-    //مقسوم علیه های مشترک دو عدد
-
-
-
-
     return 0;
 }

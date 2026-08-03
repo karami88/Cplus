@@ -1,25 +1,50 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<CodeBlocks_project_file>
-	<FileVersion major="1" minor="6" />
-	<Project>
-		<Option title="number_tools" />
-		<Option pch_mode="2" />
-		<Option compiler="gcc-mingw32" />
-		<Build>
-			<Target title="Debug">
-				<Option output="bin/Debug/number_tools" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Debug/" />
-				<Option type="1" />
-				<Option compiler="gcc-mingw32" />
-			</Target>
-			<Target title="Release">
-				<Option output="bin/Release/number_tools" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Release/" />
-				<Option type="1" />
-				<Option compiler="gcc-mingw32" />
-			</Target>
-		</Build>
-		<Unit filename="main.cpp" />
-		<Extensions />
-	</Project>
-</CodeBlocks_project_file>
+#include <iostream>
+
+using namespace std;
+
+  void Divisor_Finder(int num)
+  {
+      for (int i=1;i<=num;i++)
+        if (num%i==0)
+        cout<<i<<endl;
+  }
+
+  void Even_Odd (int num)
+  {
+      if (num%2==0)
+        cout << "The number is even";
+      else
+        cout << "The number is odd";
+  }
+
+  void Sum_Smaller_Number (int num, int sum)
+  {
+      for (int i=1;i<num;i++)
+         sum=sum+i;
+         cout<<sum;
+  }
+int main()
+{
+    int num,sum;
+      cout << "Enter your number:"<<endl;
+      cin >>num;
+      cout << "Divisor Finder " <<"(1)"<< endl;
+      cout << "Even or Odd "<< "(2)"<< endl;
+      cout << "Sum of number smaller than "<<num<<"  (3)"<<endl;
+      cout << "Please enter service number you want: ";
+    int service_Num;
+      cin>> service_Num;
+    switch (service_Num)
+    {
+      case 1:
+           Divisor_Finder(num);
+           break;
+      case 2:
+           Even_Odd(num);
+           break;
+      case 3:
+           Sum_Smaller_Number (num,sum);
+           break;
+    }
+    return 0;
+}

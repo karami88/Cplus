@@ -1,25 +1,64 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<CodeBlocks_project_file>
-	<FileVersion major="1" minor="6" />
-	<Project>
-		<Option title="ArrayOperations" />
-		<Option pch_mode="2" />
-		<Option compiler="gcc-mingw32" />
-		<Build>
-			<Target title="Debug">
-				<Option output="bin/Debug/ArrayOperations" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Debug/" />
-				<Option type="1" />
-				<Option compiler="gcc-mingw32" />
-			</Target>
-			<Target title="Release">
-				<Option output="bin/Release/ArrayOperations" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Release/" />
-				<Option type="1" />
-				<Option compiler="gcc-mingw32" />
-			</Target>
-		</Build>
-		<Unit filename="main.cpp" />
-		<Extensions />
-	</Project>
-</CodeBlocks_project_file>
+#include <iostream>
+
+using namespace std;
+
+int findMax(int arr[], int n);
+int findMin (int arr[], int n);
+
+int main()
+{
+    int n;
+      cout << "count of number:" ;
+      cin>> n;
+
+    int number[n];
+      cout << "Enter "<< n <<" numbers"<<endl;
+
+    for (int i=0;i<n;i++)
+    {
+        cin>> number[i];
+    }
+
+    int choice;
+
+      cout <<"Choose an option\n";
+      cout << "Find max (1)\n";
+      cout << "Find min (2)\n";
+      cout << "Find duplicate number (3)\n";
+    cin >> choice;
+
+    switch (choice)
+    {
+      case 1:
+          cout <<"max:"<<findMax(number,n);
+          break;
+
+      case 2:
+          cout <<"min:"<<findMin (number ,n);
+          break;
+    }
+
+   return 0;
+}
+int findMax(int arr[], int n)
+{
+    int Max = arr[0];
+
+    for (int i=1; i<n; i++)
+    {
+        if (arr[i] >Max)
+         Max = arr[i];
+    }
+    return Max;
+}
+
+int findMin (int arr[], int n)
+{
+    int Min = arr[0];
+    for (int i=1; i<n;i++)
+    {
+        if (arr[i]<Min)
+        Min = arr[i];
+    }
+    return Min;
+}
